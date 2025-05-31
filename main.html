@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Sis! 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 🌟 Welcome Section -->
+<section id="welcome">
+  <div class="content-wrapper">
+    <!-- Stickers close to the text -->
+    <img src="images/cake.png" class="sticker sticker1" alt="sticker">
+    <img src="images/camera.png" class="sticker sticker2" alt="sticker">
+    <img src="images/cherry.png" class="sticker sticker3" alt="sticker">
+    <img src="images/heart.png" class="sticker sticker4" alt="sticker">
+    <img src="images/stars.png" class="sticker sticker5" alt="sticker">
+
+    <h1>HAPPY BIRTHDAY, DOCTOR QUEEN 👑</h1>
+    <p>This website is made just for you akkooo💖</p>
+  </div>
+</section>
+
+
+  <!-- 🕰️ Timeline Section -->
+<section id="timeline">
+  <h2>Our Story Timeline</h2>
+  <div class="timeline-wrapper">
+    <div class="timeline-item">
+      <div class="circle">👶</div>
+      <p>Childhood shenanigans: Played all the skits from amma, appa to beggars 🎭, interviews and had endless fun!</p>
+    </div>
+    <div class="timeline-item">
+      <div class="circle">🧒</div>
+      <p>Teen drama & bonding: then we matured a little 🧠 and had many serious talks, talking abt life and Netflix 🍿 togetherr, cooking 🍳 togetherr</p>
+    </div>
+    <div class="timeline-item">
+      <div class="circle">👩‍⚕️</div>
+      <p>Doctor journey!: and now you made us all proud by cracking NEET 🎉 and u r becoming a future doctorr 💉 A CUTE DOCTOR!</p>
+    </div>
+  </div>
+</section>
+
+  <!-- 📸 Gallery Section -->
+<!-- 🌸 Memory Lane Section -->
+<section id="memory-lane">
+  <h2>Down the Memory Lane 📷</h2>
+  <div class="photo-wire">
+    <div class="photo-item">
+            <span class="pin">🧷</span>
+      <img src="images/pic1.jpeg" alt="Memory 1">
+    </div>
+    <div class="photo-item">
+            <span class="pin">🧷</span>
+      <img src="images/pic2.jpeg" alt="Memory 2">
+    </div>
+    <div class="photo-item">
+            <span class="pin">🧷</span>
+      <img src="images/pic3.jpeg" alt="Memory 3">
+    </div>
+  </div>
+</section>
+
+
+  <!-- 🎥 Video Section -->
+  <section id="video">
+    <h2>My Message to You 🎥</h2>
+    <video controls>
+      <source src="images/message.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- 🎁 Surprise Gifts -->
+<section id="gifts">
+  <h2>Click to Unwrap Your Virtual Gift 🎁</h2>
+
+  <!-- The gift button (JPEG image) -->
+  <img src="images/button.jpg" alt="Gift Button" class="gift-button" onclick="revealGift()">
+
+  <!-- The fullscreen overlay with the certificate -->
+  <div id="giftBox" class="gift-popup hidden">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeGift()">×</span>
+      <img src="images/certificate.png" alt="Certificate" class="certificate-image" />
+    </div>
+  </div>
+</section>
+
+<section id="promises">
+  <h2>My Promises to You 💌</h2>
+  <div class="promise-wrapper">
+    <div class="promise-card pink">
+      <p>I promis to always stay as your bestfriend as we are blood related anyway so no escape lol🍫</p>
+    </div>
+    <div class="promise-card yellow">
+      <p>I promise to tease you foreverrr 😛</p>
+    </div>
+    <div class="promise-card purple">
+      <p>I promise to make you laugh since Im the funniest one👏</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="horoscope">
+  <h2>Your Magical Sister Horoscope 🔮</h2>
+
+  <div class="crystal-ball" onclick="generateHoroscope()">
+    <img src="images/crystal-ball.png" alt="Crystal Ball" />
+    <p class="click-text">Tap the Crystal Ball</p>
+  </div>
+  <!-- Magical Text Overlay -->
+  <div id="horoscopeOverlay" class="hidden">
+    <p id="horoscopeResult"></p>
+  </div>
+</section>
+
+<section id="farewell">
+  <h2>With All My Love 💌</h2>
+  <p class="farewell-message">
+    No matter where life takes us, you'll always be the magical human of my life.  
+    Here’s to memories, madness, movie dates, car backseat madness and latenight chats!  
+    Love youu — your one and only shabuuu💜
+  </p>
+</section>
+
+  <script src="script.js"></script>
+</body>
+</html>

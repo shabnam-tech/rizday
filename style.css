@@ -1,0 +1,625 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+
+html, body {
+  height: 100%;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: #fffafc;
+  color: #4d2c3d;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh; /* full screen */
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #ffe3f1;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+  border-radius: 0; /* remove rectangle feel */
+  overflow: auto;
+  height: auto;
+}
+
+.sticker-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+#welcome {
+  background: linear-gradient(to bottom right, #ffe3f1, #ffd6ea);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 50px;
+}
+
+.sticker {
+  position: absolute;
+  width: 12vw;
+  max-width: 80px;
+  opacity: 0.95;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Place around the text */
+.sticker1 {
+  top: -70px;
+  left: -20px;
+  transform: rotate(-10deg);
+}
+
+.sticker2 {
+  top: -30px;
+  right: -40px;
+  transform: rotate(15deg);
+}
+
+.sticker3 {
+  bottom: -40px;
+  left: -20px;
+  transform: rotate(-15deg);
+}
+
+.sticker4 {
+  bottom: -40px;
+  right: -30px;
+  transform: rotate(10deg);
+}
+
+.sticker5 {
+  top: 96%;
+  left: 50%;
+  transform: translate(-50%, -140%) rotate(-5deg);
+}
+
+@keyframes float {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+
+#welcome h1,
+#welcome p {
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+}
+
+h1, h2 {
+  color: #d63384;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+#welcome p{
+  font-size: 22px;
+  font-style: italic;
+}
+
+#welcome,
+#timeline {
+  margin-bottom: 0 !important;
+}
+
+
+.timeline-item {
+  background: #ffd6eb;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#timeline {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to bottom, #fff0f7, #ffe6f0);
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+#timeline h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  z-index: 2;
+  padding-top: 10px;
+}
+
+.timeline-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ffaad4;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.circle {
+  background: #fff;
+  border: 3px solid #ff69b4;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.timeline-item p {
+  font-size: 1.1rem;
+  max-width: 250px;
+  background: #ffe3f1;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.certificate-image {
+  max-width: 90%;
+  margin: 2rem auto;
+  display: block;
+  border: 4px solid #d63384;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(214, 51, 132, 0.5);
+  animation: popUp 0.6s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Gift button styling */
+.gift-button {
+  width: 200px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  animation: pulse 2s infinite;
+}
+.gift-button:hover {
+  transform: scale(1.1);
+}
+
+/* Fullscreen popup */
+.gift-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Hide initially */
+.hidden {
+  display: none;
+}
+
+/* Popup inner content */
+.popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.certificate-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(255, 133, 162, 0.5);
+  border: 5px dashed #ff99cc;
+}
+
+/* Close button styling */
+.close-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 40px;
+  color: #ff4081;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+#video video {
+  transform: rotate(-90deg);
+  transform-origin: center;
+  width: auto;
+  height: 400px; /* Adjust height to fit your design */
+}
+
+#memory-lane {
+  background: linear-gradient(to right, #fef2f8, #f3e8ff);
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+}
+
+#memory-lane h2 {
+  font-size: 2.5rem;
+  color: #6a0572;
+  margin-bottom: 40px;
+}
+
+.photo-wire {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  position: relative;
+  padding-top: 10px;
+  border-top: 4px dashed #d8b4fe; /* the wire */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.photo-item {
+  position: relative;
+  animation: swing 4s ease-in-out infinite alternate;
+  transform-origin: top center;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(4deg);
+  }
+}
+
+.pin {
+  font-size: 1.5rem;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.photo-item img {
+  width: 180px;
+  height: auto;
+  border: 4px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+#giftBox.hidden {
+  display: none;
+}
+
+#giftBox img {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 2rem;
+  border: 4px dashed #ff99cc;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 133, 162, 0.5);
+}
+
+#promises {
+  padding: 60px 20px;
+  background: #fff1f8;
+  text-align: center;
+}
+
+#promises h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ff69b4;
+}
+
+.promise-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.promise-card {
+  width: 220px;
+  height: 220px;
+  padding: 20px;
+  font-family: "Comic Neue", cursive;
+  font-size: 1.2rem;
+  color: #333;
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.promise-card:hover {
+  transform: scale(1.05) rotate(0deg);
+}
+
+/* Color themes for sticky notes */
+.pink {
+  background: #ffcce7;
+}
+
+.yellow {
+  background: #fff9b1;
+}
+
+.purple {
+  background: #e5ccff;
+}
+
+.crystal-ball {
+  cursor: pointer;
+  display: flex; /* better layout */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* no bg */
+  border: none;            /* no border */
+  padding: 0;
+  margin: 0 auto;
+  animation: glow 2s infinite alternate;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.click-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: #b14aed;
+  margin-top: 15px;
+  animation: shimmer 2s infinite ease-in-out;
+  text-shadow: 0 0 8px #e0b3ff, 0 0 12px #ffa3ff;
+  cursor: pointer;
+}
+
+.horoscope p{
+  font-style: italic;
+  font-weight: bold;
+}
+.crystal-ball img {
+  width: 250px;
+  height: auto;
+  border: none !important; /* Kill it with !important */
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent;
+  display: block; /* avoid extra space below */
+  margin: 0 auto;
+  padding: 0;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+
+.crystal-ball:hover img {
+  transform: scale(1.1) rotate(5deg);
+  animation: pulse 1s infinite ease-in-out;
+}
+
+
+/* Subtle pulse for hover */
+@keyframes pulse {
+  0% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1.05) rotate(2deg);
+  }
+}
+/* Overlay Magic Text Centering */
+#horoscopeOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 240, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  backdrop-filter: blur(6px);
+  animation: fadeInScreen 0.6s ease-out;
+}
+
+#horoscopeOverlay.hidden {
+  display: none;
+}
+
+/* Magical Text Styling */
+#horoscopeResult {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #6a0572;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px 40px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px #ffb3ff, 0 0 50px #ddaaff;
+  animation: fadeInScale 0.7s ease forwards;
+  text-align: center;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInScreen {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+#farewell {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #ffe6ff, #fff0fa);
+  text-align: center;
+}
+
+#farewell h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #a445b2;
+  margin-bottom: 20px;
+}
+
+.farewell-message {
+  font-size: 1.4rem;
+  color: #5a0066;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 15px #f5ccff;
+  animation: fadeInText 1.4s ease forwards;
+  font-style: italic;
+}
+
+/* fade in gently */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+    section {
+    padding: 1.5rem 1rem;
+  }
+
+  h1, h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  video {
+    width: 90vw;
+  }
+  .sticker {
+    width: 18vw;
+    max-width: 70px;
+  }
+
+  .sticker.top-left {
+    top: 4vh;
+    left: 4vw;
+  }
+
+  .sticker.top-right {
+    top: 2vh;
+    right: 4vw;
+  }
+
+  .sticker.mid-left,
+  .sticker.mid-right {
+    top: 45%;
+  }
+
+  .sticker.bottom-center {
+    bottom: 2vh;
+  }
+}
+
